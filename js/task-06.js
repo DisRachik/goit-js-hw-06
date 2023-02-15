@@ -1,14 +1,18 @@
 const inputEl = document.querySelector('#validation-input');
 
 const onValidInput = event => {
-	const addBorderColor =
-		inputEl.dataset.length > inputEl.value.length ? 'invalid' : 'valid';
+	if (event.currentTarget.value) {
+		const addBorderColor =
+			event.currentTarget.dataset.length > event.currentTarget.value.length
+				? 'invalid'
+				: 'valid';
 
-	inputEl.classList.add(addBorderColor);
+		event.currentTarget.classList.add(addBorderColor);
+	}
 };
 
 const oninputFocus = event => {
-	inputEl.classList.remove(inputEl.classList[0]);
+	event.currentTarget.classList.remove(event.currentTarget.classList[0]);
 };
 
 inputEl.addEventListener('blur', onValidInput);
