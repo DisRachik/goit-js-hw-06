@@ -43,6 +43,7 @@ const onButtonForCreate = () => {
 	const numberOfNewItems = Number(inputEl.value);
 
 	if (numberOfNewItems < inputEl.min || numberOfNewItems > inputEl.max) {
+		inputEl.value = '';
 		return alert(
 			`Enter a number in the range ${inputEl.min} to ${inputEl.max}`,
 		);
